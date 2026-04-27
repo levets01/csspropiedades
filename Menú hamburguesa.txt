@@ -1,0 +1,74 @@
+<header>
+    <h1>Festival</h1>
+
+    <div class="menu-toggle">☰</div>
+
+    <nav class="nav">
+        <a href="#">Inicio</a>
+        <a href="#">Eventos</a>
+        <a href="#">Zonas</a>
+        <a href="#">Contacto</a>
+    </nav>
+</header>
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: black;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ocultamos hamburguesa en PC */
+.menu-toggle {
+    display: none;
+    font-size: 25px;
+    cursor: 
+
+    }
+
+
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none; /* oculto por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: black;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav.active {
+        display: flex; /* se muestra cuando se activa */
+    }
+}
+
+
+<script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
