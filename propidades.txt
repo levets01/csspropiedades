@@ -1,0 +1,390 @@
+========================================
+FILE: styles-specification.txt
+TYPE: CSS Technical Properties
+PROJECT: Festival Landing Page
+========================================
+
+-----------------------------
+1. ROOT VARIABLES (GLOBAL)
+-----------------------------
+:root {
+  --color-primary: #0D0D0D;        
+  // Color principal del sitio (fondo oscuro estilo nocturno)
+
+  --color-secondary: #F2A007;      
+  // Color secundario usado para resaltar elementos (festival/comida)
+
+  --color-accent: #FF4C29;         
+  // Color para botones CTA (llamadas a la acción)
+
+  --color-text: #FFFFFF;           
+  // Color principal del texto
+
+  --color-text-muted: #BFBFBF;     
+  // Color para texto secundario o menos importante
+
+  --font-primary: 'Poppins', sans-serif;
+  // Tipografía principal del sitio
+
+  --font-secondary: 'Montserrat', sans-serif;
+  // Tipografía secundaria (puede usarse en títulos)
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+  // Sistema de espaciado para mantener consistencia
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  // Bordes redondeados para botones, cards, etc.
+
+  --shadow-soft: 0 4px 10px rgba(0,0,0,0.3);
+  // Sombra suave para dar profundidad (cards, contenedores)
+}
+
+-----------------------------
+2. GLOBAL STYLES
+-----------------------------
+body {
+  background-color: var(--color-primary);
+  // Aplica el fondo oscuro a toda la página
+
+  color: var(--color-text);
+  // Define el color del texto global
+
+  font-family: var(--font-primary);
+  // Aplica la tipografía principal
+
+  line-height: 1.6;
+  // Mejora la legibilidad del texto
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  // Elimina márgenes y padding por defecto del navegador
+
+  box-sizing: border-box;
+  // Hace que el padding y border no aumenten el tamaño total
+}
+
+-----------------------------
+3. HEADER / NAVBAR
+-----------------------------
+.header {
+  width: 100%;
+  // Ocupa todo el ancho de la pantalla
+
+  position: sticky;
+  // Se mantiene fijo al hacer scroll
+
+  top: 0;
+  // Se pega arriba
+
+  background-color: var(--color-primary);
+  // Fondo oscuro para coherencia visual
+
+  z-index: 1000;
+  // Se asegura de estar por encima de otros elementos
+}
+
+.navbar {
+  display: flex;
+  // Activa Flexbox
+
+  justify-content: space-between;
+  // Separa logo y menú
+
+  align-items: center;
+  // Centra verticalmente
+
+  padding: var(--spacing-md) var(--spacing-lg);
+  // Espaciado interno
+}
+
+.logo {
+  font-size: 1.5rem;
+  // Tamaño del logo
+
+  font-weight: bold;
+  // Negrita
+}
+
+.nav-links {
+  display: flex;
+  // Menú en horizontal
+
+  gap: var(--spacing-md);
+  // Espacio entre elementos
+
+  list-style: none;
+  // Quita los puntos de lista
+}
+
+.nav-links a {
+  text-decoration: none;
+  // Quita subrayado
+
+  color: var(--color-text);
+  // Color del texto
+
+  transition: color 0.3s ease;
+  // Animación suave al hacer hover
+}
+
+.nav-links a:hover {
+  color: var(--color-secondary);
+  // Cambia de color al pasar el mouse
+}
+
+-----------------------------
+4. HERO SECTION
+-----------------------------
+.hero {
+  height: 80vh;
+  // Ocupa el 80% de la altura de la pantalla
+
+  display: flex;
+  // Flexbox para centrar contenido
+
+  justify-content: center;
+  align-items: center;
+  // Centrado horizontal y vertical
+
+  text-align: center;
+  // Texto centrado
+
+  background-image: url('../assets/images/hero.jpg');
+  // Imagen de fondo
+
+  background-size: cover;
+  // Ajusta la imagen para cubrir todo
+
+  background-position: center;
+  // Centra la imagen
+}
+
+.hero h2 {
+  font-size: 3rem;
+  // Título grande (impacto visual)
+
+  margin-bottom: var(--spacing-md);
+  // Espacio debajo
+}
+
+.hero p {
+  font-size: 1.2rem;
+  // Texto secundario
+
+  margin-bottom: var(--spacing-md);
+}
+
+-----------------------------
+5. BUTTONS (CTA)
+-----------------------------
+.btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  // Tamaño interno del botón
+
+  background-color: var(--color-accent);
+  // Color principal del botón
+
+  color: white;
+  // Texto blanco
+
+  border: none;
+  // Sin borde
+
+  border-radius: var(--radius-sm);
+  // Bordes redondeados
+
+  cursor: pointer;
+  // Cambia el cursor a mano
+
+  transition: transform 0.3s ease, background 0.3s ease;
+  // Animaciones suaves
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  // Efecto de agrandamiento
+
+  background-color: var(--color-secondary);
+  // Cambio de color
+}
+
+-----------------------------
+6. EVENTS (TABLE)
+-----------------------------
+table {
+  width: 100%;
+  // Ocupa todo el ancho
+
+  border-collapse: collapse;
+  // Une bordes de la tabla
+
+  margin-top: var(--spacing-lg);
+}
+
+th {
+  background-color: var(--color-secondary);
+  // Fondo de encabezados
+
+  color: black;
+}
+
+th, td {
+  padding: var(--spacing-sm);
+  // Espaciado interno
+
+  border: 1px solid var(--color-text-muted);
+  // Bordes
+
+  text-align: center;
+  // Texto centrado
+}
+
+tr:hover {
+  background-color: rgba(255,255,255,0.1);
+  // Efecto al pasar el mouse
+}
+
+-----------------------------
+7. ABOUT SECTION
+-----------------------------
+.about {
+  padding: var(--spacing-lg);
+  // Espaciado interno
+}
+
+.about ul {
+  margin-top: var(--spacing-md);
+  padding-left: var(--spacing-md);
+}
+
+.about li {
+  margin-bottom: var(--spacing-sm);
+}
+
+-----------------------------
+8. FOOD ZONES (GRID + CARDS)
+-----------------------------
+.food-container {
+  display: grid;
+  // Activa CSS Grid
+
+  grid-template-columns: repeat(3, 1fr);
+  // 3 columnas iguales
+
+  gap: var(--spacing-md);
+  // Espacio entre cards
+
+  padding: var(--spacing-lg);
+}
+
+.card {
+  background-color: #1A1A1A;
+  // Fondo de tarjeta
+
+  padding: var(--spacing-md);
+
+  border-radius: var(--radius-md);
+  // Bordes redondeados
+
+  box-shadow: var(--shadow-soft);
+  // Sombra
+
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  // Se eleva al pasar el mouse
+}
+
+-----------------------------
+9. GALLERY (GRID)
+-----------------------------
+.gallery-grid {
+  display: grid;
+  // Grid layout
+
+  grid-template-columns: repeat(3, 1fr);
+  // 3 columnas
+
+  gap: var(--spacing-sm);
+}
+
+.gallery-grid img {
+  width: 100%;
+  // Imagen ocupa todo el contenedor
+
+  border-radius: var(--radius-sm);
+}
+
+-----------------------------
+10. FOOTER
+-----------------------------
+.footer {
+  text-align: center;
+  // Texto centrado
+
+  padding: var(--spacing-md);
+
+  background-color: #000;
+  // Fondo negro
+}
+
+-----------------------------
+11. RESPONSIVE DESIGN
+-----------------------------
+@media (max-width: 1024px) {
+  .food-container {
+    grid-template-columns: repeat(2, 1fr);
+    // En tablet: 2 columnas
+  }
+}
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    flex-direction: column;
+    // Menú vertical en móvil
+
+    align-items: center;
+  }
+
+  .food-container {
+    grid-template-columns: 1fr;
+    // Una sola columna
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+    // Texto más pequeño en móvil
+  }
+}
+
+-----------------------------
+12. INTERACTIONS
+-----------------------------
+a, button {
+  transition: all 0.3s ease;
+  // Transiciones suaves globales
+}
+
+:hover {
+  cursor: pointer;
+  // Cursor tipo mano al pasar por elementos interactivos
+}
+
+========================================
+END OF FILE
+========================================
